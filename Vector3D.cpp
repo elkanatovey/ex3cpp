@@ -72,6 +72,32 @@ Vector3D Vector3D::operator+(const Vector3D &other)
 }
 
 /**
+    * add a scalar to the current
+    * @param the scalar
+    * @return the current vector
+    */
+Vector3D&  Vector3D::operator+ (const double &other)
+{
+    _x += other;
+    _y += other;
+    _z += other;
+    return *this;
+}
+
+/**
+    * minus a scalar to the current
+    * @param the scalar
+    * @return the current vector
+    */
+Vector3D&  Vector3D::operator- (const double &other)
+{
+    _x -= other;
+    _y -= other;
+    _z -= other;
+    return *this;
+}
+
+/**
  * return a new vector that is the result of -
  * @param other
  * @return

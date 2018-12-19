@@ -23,17 +23,46 @@ public:
     explicit Vector3D(double[3]);
 
     /**
-     * add onther vector to the current
+     * add another vector to the current
      * @param other other vector
-     * @return
+     * @return the current vector
      */
     Vector3D& operator+= (const Vector3D& other);
 
+    /**
+    * minus another vector to the current
+    * @param other other vector
+    * @return the current vector
+    */
     Vector3D& operator-= (const Vector3D& other);
 
+    /**
+    * add a scalar to the current
+    * @param the scalar
+    * @return the current vector
+    */
+    Vector3D& operator+ (const double & other);
 
+
+    /**
+    * minus a scalar to the current
+    * @param the scalar
+    * @return the current vector
+    */
+    Vector3D& operator- (const double & other);
+
+    /**
+    * add two vectors togethor
+    * @param the scalar
+    * @return the current vector
+    */
     Vector3D operator+ (const Vector3D& other);
 
+    /**
+    * minus the received vector and add new
+    * @param the scalar
+    * @return the current vector
+    */
     Vector3D operator- (const Vector3D& other);
 //
 //    /**
