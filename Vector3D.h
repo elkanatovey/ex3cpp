@@ -2,6 +2,8 @@
 
 #ifndef VECTOR3D_H
 #define VECTOR3D_H
+
+
 /**
  * A 3d vector class
  * This class represents a vector in 3d space
@@ -19,6 +21,32 @@ public:
     Vector3D(double , double, double);
 
     explicit Vector3D(double[3]);
+
+    /**
+     * add onther vector to the current
+     * @param other other vector
+     * @return
+     */
+    Vector3D& operator+= (const Vector3D& other);
+
+    Vector3D& operator-= (const Vector3D& other);
+
+
+    Vector3D operator+ (const Vector3D& other);
+
+    Vector3D operator- (const Vector3D& other);
+//
+//    /**
+//     * minus another vector to the current
+//     * @param other other vector
+//     * @return
+//     */
+//
+//    Vector3D& operator<<(const Vector3D& other);
+//
+//    Vector3D& operator>>(const Vector3D& other);
+//
+//    Vector3D& operator/(const Vector3D& other);
 
 
 private:
