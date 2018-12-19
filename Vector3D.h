@@ -16,11 +16,10 @@ public:
      */
     Vector3D();
 
-    Vector3D(int, int, int);
+    Vector3D(double , double, double);
 
-    Vector3D(int[3]);
+    explicit Vector3D(double[3]);
 
-    Vector3D(Vector3D);
 
 private:
     double _x; /**< the x coordinate of the vector. */
