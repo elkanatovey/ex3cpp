@@ -102,13 +102,57 @@ Vector3D&  Vector3D::operator- (const double &other)
  * @param other
  * @return
  */
-Vector3D Vector3D::operator- (const Vector3D &other)
+Vector3D Vector3D::operator- (const Vector3D &other) const
 {
     return Vector3D(_x - other._x, _y - other._y, _z - other._z);
 }
 
 
+/**
+* minus the received vector and add new
+* @param the scalar
+* @return the current vector
+*/
+Vector3D  Vector3D::operator- () const
+{
+    return Vector3D(-_x, -_y, -_z);
+}
 
+/**
+ * multiply a vector by a scalar and return product
+ * @param other scalar
+ * @return new vector product
+ */
+Vector3D Vector3D::operator* (const double &other) const
+{
+    return Vector3D(_x * other, _y * other, _z * other);
+}
+
+
+/**
+ * divide a vector by a scalar and return product
+ * @param other scalar
+ * @return new vector product
+ */
+Vector3D Vector3D::operator/ (const double &other) const
+{
+    if(other == 0)
+    {
+        cerr<< "Error: division by 0!\n";
+        return Vector3D();
+    }
+    return Vector3D(_x / other, _y / other, _z / other);
+}
+
+/**
+ * multiply a vector by a scalar and return product
+ * @param other scalar
+ * @return new vector product
+ */
+Vector3D operator* (const double &left, const Vector3D &right)
+{
+    return right.operator*(left);
+}
 
 void hello() {
     std::cout << "Hello, World!" << std::endl;

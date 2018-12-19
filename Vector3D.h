@@ -52,7 +52,7 @@ public:
     Vector3D& operator- (const double & other);
 
     /**
-    * add two vectors togethor
+    * add two vectors together
     * @param the scalar
     * @return the current vector
     */
@@ -63,7 +63,70 @@ public:
     * @param the scalar
     * @return the current vector
     */
-    Vector3D operator- (const Vector3D& other);
+    Vector3D operator- (const Vector3D& other) const;
+
+
+    /**
+    * minus the vector
+    * @return the minus of the current vector
+    */
+    Vector3D operator- () const ;
+
+    /**
+     * multiply a vector by a scalar and return product
+     * @param other scalar
+     * @return new vector product
+     */
+    Vector3D operator* (const double& other) const;
+
+    /**
+     * divide a vector by a scalar and return product
+     * @param other scalar
+     * @return new vector product
+     */
+    Vector3D operator/ (const double& other) const;
+
+    /**
+     * multiply a vector by a scalar and return product
+     * @param other scalar
+     * @return new vector product
+     */
+    friend Vector3D operator* (const double& left, const Vector3D& right);
+
+    /**
+     * multiply current vector by scalar
+     * @param right scalar
+     * @return current vector
+     */
+    Vector3D& operator*= (const double& right);
+
+    /**
+     * divide current vector by scalar
+     * @param right scalar
+     * @return current vector
+     */
+    Vector3D& operator/= (const double& right);
+
+    /**
+     * calculates distance between 2 vectors
+     * @param other
+     * @return
+     */
+    double operator| (const Vector3D& other);
+
+    /**
+     * returns the standard inner product between 2 vectors
+     * @param other
+     * @return
+     */
+    double operator* (const Vector3D& other);
+
+    /**
+     * returns the degree in radians between 2 vectors
+     * @param other
+     * @return
+     */
+    double operator^ (const Vector3D& other);
 //
 //    /**
 //     * minus another vector to the current
