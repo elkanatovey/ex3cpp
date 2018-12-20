@@ -85,6 +85,8 @@ public:
 
     double determinant();
 
+    ~Matrix3D() = default;
+
 private:
     Vector3D _row1;
     Vector3D _row2;
