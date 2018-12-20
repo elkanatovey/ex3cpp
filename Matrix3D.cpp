@@ -253,7 +253,7 @@ std::ostream &operator<<(std::ostream &out, const Matrix3D &m)
 * @param i the coordinate to get
 * @return  coordinate
 */
-Vector3D &Matrix3D::operator[](const int &i)
+Vector3D &Matrix3D::operator[](const short &i)
 {
     if (i == 0) { return _row1; }
     if (i == 1) { return _row2; }
@@ -268,7 +268,7 @@ Vector3D &Matrix3D::operator[](const int &i)
 * @return  coordinate
 */
 
-Vector3D Matrix3D::operator[](const int &i) const {
+Vector3D Matrix3D::operator[](const short &i) const {
     if (i == 0) { return _row1; }
     if (i == 1) { return _row2; }
     if (i == 2) { return _row3; }
@@ -282,7 +282,8 @@ Vector3D Matrix3D::operator[](const int &i) const {
 * @return  coordinate
 */
 
-Vector3D &Matrix3D::row(short &i) {
+Vector3D &Matrix3D::row(short &i)
+{
     if(i > 2)
     {
         std::cerr << "Error: invalid coordinate index!";

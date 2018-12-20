@@ -1,5 +1,5 @@
 CC = g++
-CCFLAGS = -c -Wall -Wextra
+CCFLAGS = -c -Wall -Wextra -std=c++17 -pthread -g
 LDFLAGS = -lm
 
 # add your .c files here  (no file suffixes)

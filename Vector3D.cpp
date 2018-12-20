@@ -16,10 +16,10 @@ using namespace std;
 Vector3D::Vector3D() : Vector3D(0.0, 0.0, 0.0) {}
 
 /**
- * receives 3 doubles and initializes Vector3D
- * @param x
- * @param y
- * @param z
+ * Receives 3 doubles and initializes Vector3D
+ * @param x coordinate
+ * @param y coordinate
+ * @param z coordinate
  */
 Vector3D::Vector3D(double x, double y, double z)
 {
@@ -142,7 +142,7 @@ Vector3D Vector3D::operator/ (const double &other) const
 {
     if(other == 0)
     {
-        cerr<< "Error: division by 0!\n";
+        cerr << "Error: division by 0!\n";
         return Vector3D();
     }
     return Vector3D(_x / other, _y / other, _z / other);
@@ -165,7 +165,7 @@ Vector3D operator* (const double &left, const Vector3D &right)
 */
 Vector3D& Vector3D::operator*=(const double& right)
 {
-    _x =_x * right;
+    _x = _x * right;
     _y = _y * right;
     _z = _z * right;
     return *this;
@@ -181,10 +181,10 @@ Vector3D& Vector3D::operator/=(const double& right)
 {
     if(right == 0)
     {
-        cerr<< "Error: division by 0!\n";
+        cerr << "Error: division by 0!\n";
         return *this;
     }
-    _x =_x / right;
+    _x = _x / right;
     _y = _y / right;
     _z = _z / right;
     return *this;
@@ -220,7 +220,7 @@ double Vector3D::operator^ (const Vector3D& other) const
     if (radian > 1 || radian < -1)
     {
         radian = radian / radian;
-        cerr<< "Error: bad degrees!\n";
+        cerr << "Error: bad degrees!\n";
     }
     return acos(radian);
 }

@@ -20,8 +20,14 @@ public:
      */
     Vector3D();
 
+    /**
+     *constructor by value
+     */
     Vector3D(double , double, double);
 
+    /**
+     * constructor ith array
+     */
     explicit Vector3D(double[3]);
 
     /**

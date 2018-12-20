@@ -3,7 +3,12 @@
 
 #include <iostream>
 
-int main() {
+/**
+ * blabla
+ * @return bla
+ */
+int main()
+{
 
   Vector3D a(3.0, 2.0, 5.0);
   std::cout << "a.norm = " << a.norm() << std::endl;
