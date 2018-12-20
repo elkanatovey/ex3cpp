@@ -4,6 +4,8 @@
 #define VECTOR3D_H
 
 
+#include <iosfwd>
+
 /**
  * A 3d vector class
  * This class represents a vector in 3d space
@@ -41,7 +43,7 @@ public:
     * @param the scalar
     * @return the current vector
     */
-    Vector3D& operator+ (const double & other);
+    Vector3D& operator+= (const double & other);
 
 
     /**
@@ -49,14 +51,14 @@ public:
     * @param the scalar
     * @return the current vector
     */
-    Vector3D& operator- (const double & other);
+    Vector3D& operator-= (const double & other);
 
     /**
     * add two vectors together
     * @param the scalar
     * @return the current vector
     */
-    Vector3D operator+ (const Vector3D& other);
+    Vector3D operator+ (const Vector3D& other) const;
 
     /**
     * minus the received vector and add new
@@ -112,21 +114,50 @@ public:
      * @param other
      * @return
      */
-    double operator| (const Vector3D& other);
+    double operator| (const Vector3D& other) const;
 
     /**
      * returns the standard inner product between 2 vectors
      * @param other
      * @return
      */
-    double operator* (const Vector3D& other);
+    double operator* (const Vector3D& other) const;
 
     /**
-     * returns the degree in radians between 2 vectors
-     * @param other
-     * @return
+     * return the angle between 2 vectors in radians
+     * @param other other vector
+     * @return angle
      */
-    double operator^ (const Vector3D& other);
+    double operator^ (const Vector3D& other) const;
+
+
+    /**
+     * read a vector from stdin
+     * @param in stdin
+     * @param v the vector to read to
+     * @return stdin
+     */
+    friend std::istream& operator>> (std::istream& in, Vector3D& v);
+
+    /**
+     * puts a vector in stdout
+     * @param out stdout
+     * @param v the vector to read from
+     * @return stdout
+     */
+    friend std::ostream&operator<< (std::ostream& out, const Vector3D& v);
+
+    double& operator[] (const int& i) const;
+
+    double operator[] (const int& i);
+
+    /**
+     *
+     * @return the distance between the vector and 0
+     */
+    double norm() const;
+
+    double dist(const Vector3D& other) const;
 //
 //    /**
 //     * minus another vector to the current
