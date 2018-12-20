@@ -79,7 +79,7 @@ public:
 
     Vector3D& row(short& i);
 
-    Vector3D& column(short& i);
+    Vector3D column(short& i);
 
     double trace();
 

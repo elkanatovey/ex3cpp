@@ -253,7 +253,6 @@ std::ostream &operator<<(std::ostream &out, const Matrix3D &m)
 * @param i the coordinate to get
 * @return  coordinate
 */
-
 Vector3D &Matrix3D::operator[](const int &i)
 {
     if (i == 0) { return _row1; }
@@ -263,6 +262,12 @@ Vector3D &Matrix3D::operator[](const int &i)
     exit(-1);
 }
 
+/**
+* get value of the given matrix coordinate( x, y, z respectively)
+* @param i the row val to get
+* @return  coordinate
+*/
+
 Vector3D Matrix3D::operator[](const int &i) const {
     if (i == 0) { return _row1; }
     if (i == 1) { return _row2; }
@@ -271,8 +276,47 @@ Vector3D Matrix3D::operator[](const int &i) const {
     exit(-1);
 }
 
+/**
+* get value of the given matrix coordinate( x, y, z respectively)
+* @param i the row vector to get
+* @return  coordinate
+*/
+
 Vector3D &Matrix3D::row(short &i) {
+    if(i > 2)
+    {
+        std::cerr << "Error: invalid coordinate index!";
+        exit(-1);
+    }
     return (*this)[i];
+}
+
+/**
+* get value of the given matrix coordinate( x, y, z respectively)
+* @param i the column vector to get
+* @return  coordinate
+*/
+
+Vector3D Matrix3D::column(short &i)
+{
+    if(i > 2)
+    {
+        std::cerr << "Error: invalid coordinate index!";
+        exit(-1);
+    }
+    return Vector3D(_row1[i], _row2[i], _row3[i]);
+}
+
+
+double Matrix3D::trace()
+{
+    return _row1[0] + _row2[1] + _row3[2];
+}
+
+double Matrix3D::determinant()
+{
+    return _row1[0] * (_row2[1] * _row3[2] - _row2[2] * _row3[1]) - _row1[1] * (_row2[0] *
+    _row3[2] - _row2[2] * _row3[0]) + _row1[2] * (_row2[0] * _row3[1] - _row2[1] * _row3[0]);
 }
 
 
