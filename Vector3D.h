@@ -148,14 +148,14 @@ public:
     friend std::ostream&operator<< (std::ostream& out, const Vector3D& v);
 
     /**
-     * get the given matrix coordinate( x, y, z respectively)
+     * get the given vector coordinate( x, y, z respectively)
      * @param i the coordinate to get
      * @return pointer to coordinate
      */
     double& operator[] (const int& i);
 
     /**
-     * get value of the given matrix coordinate( x, y, z respectively)
+     * get value of the given vector coordinate( x, y, z respectively)
      * @param i the coordinate to get
      * @return vale of coordinate
      */

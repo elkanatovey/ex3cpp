@@ -24,15 +24,66 @@ public:
 
     Matrix3D(Vector3D a, Vector3D b, Vector3D c);
 
-    Matrix3D(Matrix3D& toCopy);
+    Matrix3D(const Matrix3D& toCopy);
+
+    Matrix3D& operator=(const Matrix3D& other);
 
     Matrix3D& operator-= (const Matrix3D& other);
 
     Matrix3D& operator+= (const Matrix3D& other);
 
-    Matrix3D operator*= (const Matrix3D& other) const;
+    Matrix3D& operator*= (const Matrix3D& other) ;
 
-    Matrix3D operator-(const Matrix3D& other);
+    Matrix3D operator-(const Matrix3D& other) const;
+
+    Matrix3D operator+(const Matrix3D& other) const;
+
+    Matrix3D operator*(const Matrix3D& other) const;
+
+    Matrix3D& operator*= (const double& right);
+
+    Matrix3D& operator/= (const double& other);
+
+    Vector3D operator* (const Vector3D& v) const;
+
+
+    /**
+     * read a vector from stdin
+     * @param in stdin
+     * @param m the matrix to read to
+     * @return stdin
+     */
+    friend std::istream& operator>> (std::istream& in, Matrix3D& m);
+
+    /**
+     * puts a vector in stdout
+     * @param out stdout
+     * @param m the matrix to read from
+     * @return stdout
+     */
+    friend std::ostream&operator<< (std::ostream& out, const Matrix3D& m);
+
+    /**
+     * get the given matrix coordinate( x, y, z respectively)
+     * @param i the coordinate to get
+     * @return pointer to coordinate
+     */
+    Vector3D& operator[] (const int& i);
+
+    /**
+     * get value of the given matrix coordinate( x, y, z respectively)
+     * @param i the coordinate to get
+     * @return vale of coordinate
+     */
+    Vector3D operator[] (const int& i) const;
+
+    Vector3D& row(short& i);
+
+    Vector3D& column(short& i);
+
+    double trace();
+
+    double determinant();
 
 private:
     Vector3D _row1;
