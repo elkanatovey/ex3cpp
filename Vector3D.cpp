@@ -1,3 +1,4 @@
+// Vector3D.cpp
 #include "Vector3D.h"
 
 #include <iostream>
@@ -249,6 +250,36 @@ ostream& operator<< (ostream& out, const Vector3D& v)
 {
     out << v._x << ' ' << v._y << ' ' << v._z;
     return out;
+}
+
+
+
+/**
+* get the given matrix coordinate( x, y, z respectively)
+* @param i the coordinate to get
+* @return pointer to coordinate
+*/
+double& Vector3D::operator[] (const int &i)
+{
+    if (i == 0) { return _x; }
+    if (i == 1) { return _y; }
+    if (i == 2) { return _z; }
+    std::cerr << "Error: invalid coordinate index!";
+    return _z;
+}
+
+/**
+* get value of the given matrix coordinate( x, y, z respectively)
+* @param i the coordinate to get
+* @return vale of coordinate
+*/
+double Vector3D::operator[] (const int &i) const
+{
+    if (i == 0) { return _x; }
+    if (i == 1) { return _y; }
+    if (i == 2) { return _z; }
+    std::cerr << "Error: invalid coordinate index!";
+    return -1;
 }
 
 /**

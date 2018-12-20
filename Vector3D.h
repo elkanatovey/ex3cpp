@@ -147,30 +147,32 @@ public:
      */
     friend std::ostream&operator<< (std::ostream& out, const Vector3D& v);
 
-    double& operator[] (const int& i) const;
-
-    double operator[] (const int& i);
+    /**
+     * get the given matrix coordinate( x, y, z respectively)
+     * @param i the coordinate to get
+     * @return pointer to coordinate
+     */
+    double& operator[] (const int& i);
 
     /**
-     *
-     * @return the distance between the vector and 0
+     * get value of the given matrix coordinate( x, y, z respectively)
+     * @param i the coordinate to get
+     * @return vale of coordinate
+     */
+    double operator[] (const int& i) const;
+
+    /**
+     * calculate vector length
+     * @return ector length
      */
     double norm() const;
 
+    /**
+     * calculate distance between 2 vectors
+     * @param other other vector to calc wih
+     * @return the vector distance
+     */
     double dist(const Vector3D& other) const;
-//
-//    /**
-//     * minus another vector to the current
-//     * @param other other vector
-//     * @return
-//     */
-//
-//    Vector3D& operator<<(const Vector3D& other);
-//
-//    Vector3D& operator>>(const Vector3D& other);
-//
-//    Vector3D& operator/(const Vector3D& other);
-
 
 private:
     double _x; /**< the x coordinate of the vector. */
