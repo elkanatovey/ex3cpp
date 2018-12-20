@@ -10,6 +10,7 @@
 
 class Matrix3D {
 
+public:
     Matrix3D();
 
     explicit Matrix3D(double diagonal);
@@ -32,6 +33,11 @@ class Matrix3D {
     Matrix3D operator*= (const Matrix3D& other) const;
 
     Matrix3D operator-(const Matrix3D& other);
+
+private:
+    Vector3D _row1;
+    Vector3D _row2;
+    Vector3D _row3;
 
 };
 
